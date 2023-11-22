@@ -1,0 +1,38 @@
+html{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+#menu{
+    justify-content: space-evenly;
+    display: inline-block;
+    background-color: rgb(233, 200, 157);
+    display: block;
+    color: black;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 3px;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+#title{
+    font-size: 2rem; 
+}
+#quiz{
+    justify-content: space-around;
+    font-size: 1.2rem;
+    background-color: rgb(233, 200, 157);
+    margin: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    height: auto;
+}
+.questions{
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    border-radius: 7px;
+    border-width: 0;
+    padding: 5px;
+    display: inline-block;
+}

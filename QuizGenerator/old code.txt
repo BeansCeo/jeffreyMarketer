@@ -1,0 +1,48 @@
+/*
+const topic = document.getElementById("topic");
+const board = document.getElementById("schoolBoard");
+const level = document.getElementById("level");
+topic.addEventListener("input", () => {
+    topic.style.width = topic.value.length * 9 + "px";
+});
+board.addEventListener("input", () => {
+    board.style.width = board.value.length * 9 + "px";
+});
+level.addEventListener("input", () => {
+    level.style.width = level.value.length * 9 + "px";
+});
+document.getElementById("genQuiz").addEventListener("click", function(){
+    if(topic.value === ""){
+        document.getElementById("issues").textContent = `Please enter a topic`
+    }
+    else if(board.value === ""){
+        document.getElementById("issues").textContent = `Please provide your educational boards`
+    }
+    else if (level.value ===""){
+        document.getElementById("issues").textContent = `Please provide the grade you are studying/teaching in`
+    }
+});
+const prompt = `Generate a quiz on ${topic} making sure to create questions based on ${board}, ${level}. Generate a minimum of 5 multiple choice questions and 10 long answer questions`
+*/
+const axios = require("axios")
+const apiKey = process.env.OPENAI_API_KEY;
+const client = axios.create({
+  headers:{
+    Authorization: "Bearer " + "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",
+  },
+})
+const params = {
+  prompt: "Do you like beans?",
+  model: "text-davinci-003",
+  max_tokens: 10,
+  temperature: 0,
+};
+client
+  .post("https://api.openai.com/v1/completions", params)
+  .then((result)=>{
+    console.log(result.data.choices[0].text); 
+  })
+  .catch((err) => {
+    console.log(err);
+  });
+
