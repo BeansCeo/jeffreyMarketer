@@ -2,25 +2,24 @@ html{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 #menu{
-    justify-content: space-evenly;
-    display: inline-block;
-    background-color: rgb(233, 200, 157);
-    display: block;
-    color: black;
-    border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 3px;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+    width: 100%;
+    height: 50px;
+    background-color: #1b1b32;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    margin-bottom: 40px;
+    color: rgb(246, 217, 150);
 }
 #title{
     font-size: 2rem; 
 }
 #quiz{
-    justify-content: space-around;
+
     font-size: 1.2rem;
-    background-color: rgb(233, 200, 157);
+    background-color: rgb(247, 234, 234);
     margin: 10px;
     border-radius: 10px;
     padding: 10px;
