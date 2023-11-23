@@ -1,6 +1,6 @@
-import { Axios } from "axios";
+import axios from "axios";
 const apiKey = process.env.OPENAI_API_KEY;
-const client = Axios.create({
+const client = axios.create({
   headers:{
     Authorization: "Bearer " + apiKey,
   },
