@@ -25,7 +25,8 @@ generate.addEventListener("click", function () {
   client
     .post("https://api.openai.com/v1/completions", params)
     .then((result)=>{
-      console.log(result.data.choices[0].text); 
+      let quiz = result.data.choices[0].text;
+      console.log(quiz);
     })
   .catch((err) => {
       console.log(err);
