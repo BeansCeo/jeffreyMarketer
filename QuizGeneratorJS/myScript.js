@@ -32,3 +32,5 @@ generate.addEventListener("click", function () {
       console.log(err);
     });
   }); 
+  answer = document.createElement('a')
+  answer.setAttribute('href', 'quiz.html')
