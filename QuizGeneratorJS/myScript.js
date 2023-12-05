@@ -34,3 +34,4 @@ generate.addEventListener("click", function () {
   }); 
   answer = document.createElement('a')
   answer.setAttribute('href', 'quiz.html')
+  
