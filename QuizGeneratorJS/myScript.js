@@ -20,7 +20,7 @@ generate.addEventListener("click", function () {
     prompt: `${prompt}`,
     model: "text-davinci-003",
     max_tokens: 10,
-    temperature: 0,
+    temperature: 0, 
   };
   client
     .post("https://api.openai.com/v1/completions", params)
