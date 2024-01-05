@@ -1,4 +1,5 @@
 import OpenAI from "openai";
+const response = document.getElementById("response");
 const openai = new OpenAI({
   apiKey: "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"
 });
@@ -17,5 +18,7 @@ async function main() {
     frequency_penalty: 0,
     presence_penalty: 0,
   });
-  console.log(response.choices[0])}
+  console.log(response.choices[0])
+  response.textContent = response.choices[0];
+}
 main();
