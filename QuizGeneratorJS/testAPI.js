@@ -1,5 +1,4 @@
 import OpenAI from "openai";
-const response = document.getElementById("response");
 const openai = new OpenAI({
   apiKey: "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"
 });
@@ -9,7 +8,7 @@ async function main() {
     messages: [
       {
         "role": "user",
-        "content": "Create 2 questions for an 8th grade igcse student, studying Atomic Structure"
+        "content": "Create 5 analytical questions for an 8th grade igcse student, studying Photosynthesis and functions in a plant"
       }
     ],
     temperature: 0.5,
@@ -18,7 +17,6 @@ async function main() {
     frequency_penalty: 0,
     presence_penalty: 0,
   });
-  console.log(response.choices[0])
-  response.textContent = response.choices[0];
+  console.log(response.choices[0].message.content)
 }
 main();
