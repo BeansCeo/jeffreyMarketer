@@ -11,27 +11,28 @@ while (topic == ""){
 generate.addEventListener("click", function () {
   const prompt = `Generate a quiz on ${topic}. You should include ${questions}. The difficulty of the questions should be based on ${board}, class ${diff}.`;
   const apiKey = process.env.OPENAI_API_KEY;
-  const client = axios.create({
-    headers:{
-      Authorization: "Bearer " + apiKey,
-    },
-  })
-  const params = {
-    prompt: `${prompt}`,
-    model: "text-davinci-003",
-    max_tokens: 10,
-    temperature: 0, 
-  };
-  client
-    .post("https://api.openai.com/v1/completions", params)
-    .then((result)=>{
-      let quiz = result.data.choices[0].text;
-      console.log(quiz);
+  if (topic !== "" && board !== "" && diff !== ""){
+    const client = axios.create({
+      headers:{
+        Authorization: "Bearer " + apiKey,
+      },
     })
-  .catch((err) => {
-      console.log(err);
-    });
-  }); 
-  answer = document.createElement('a')
-  answer.setAttribute('href', 'quiz.html')
-  
+    const params = {
+      prompt: `${prompt}`,
+      model: "text-davinci-003",
+      max_tokens: 10,
+      temperature: 0, 
+    };
+    client
+      .post("https://api.openai.com/v1/completions", params)
+      .then((result)=>{
+        let quiz = result.data.choices[0].text;
+        console.log(quiz);
+      })
+    .catch((err) => {
+        console.log(err);
+      });
+    
+    }}); 
+    quiz = document.getElementById('quiz')
+    quiz.setAttribute('href', 'quiz.html')
