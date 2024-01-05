@@ -1,15 +1,21 @@
 import OpenAI from "openai";
-const api = process.env.OPENAI_API_KEY;
-const openai = new OpenAI({apiKey: api});
+const openai = new OpenAI({
+  apiKey: "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"
+});
 async function main() {
-  const completion = await openai.chat.completions.create({
-    messages: [{"role": "system", "content": "You are a helpful assistant."},
-        {"role": "user", "content": "Who won the world series in 2020?"},
-        {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-        {"role": "user", "content": "Where was it played?"}],
+  const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
+    messages: [
+      {
+        "role": "user",
+        "content": "Create 2 questions for an 8th grade igcse student, studying Atomic Structure"
+      }
+    ],
+    temperature: 0.5,
+    max_tokens: 1024,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
   });
-
-  console.log(completion.choices[0]);
-}
+  console.log(response.choices[0])}
 main();
