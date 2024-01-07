@@ -9,7 +9,7 @@ async function quiz() {
     messages: [
       {
         "role": "user",
-        "content": "Create 5 analytical questions for an 8th grade igcse student, studying Photosynthesis and functions in a plant"
+        "content": "Create 20 analytical math word problems for an 8th grade igcse student, studying functions and formulae"
       }
     ],
     temperature: 0.5,
