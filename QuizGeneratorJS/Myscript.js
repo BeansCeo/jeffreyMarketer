@@ -1,5 +1,6 @@
-const gen = document.getElementById("result");
-const generate = document.getElementById("generate");
+document.addEventListener('DOMContentLoaded', function () {
+  const gen = document.getElementById("result");
+  const generate = document.getElementById("generate");});
 import OpenAI from "openai";
 const openai = new OpenAI({
   apiKey: "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"
