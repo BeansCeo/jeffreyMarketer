@@ -1,16 +1,16 @@
-import OpenAI from "openai";
 const gen = document.getElementById("result");
-const generate = document.getElementById("generate")
+const generate = document.getElementById("generate");
+import OpenAI from "openai";
 const openai = new OpenAI({
   apiKey: "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"
 });
-generate.addEventListener('click', async () =>{
+generate.addEventListener('click', async function () {
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
       {
         "role": "user",
-        "content": "Create 20 short math questions for an 8th grade igcse student, studying algebraic equations"
+        "content": "Create 10 analytical questions for an 8th grade igcse student, studying probability"
       }
     ],
     temperature: 0.5,
@@ -19,10 +19,11 @@ generate.addEventListener('click', async () =>{
     frequency_penalty: 0,
     presence_penalty: 0,
   });
-  var delayInMilliseconds = 10000; //10 seconds
+  gen.textContent = "generating...";
+  const result = response.choices[0].message.content;
+  console.log(result);
+  var delayInMilliseconds = 10000; //5 seconds
   setTimeout(function() {
   }, delayInMilliseconds);
-  console.log(response.choices[0].message.content)
-  const result = response.choices[0].message.content;
   gen.textContent = `quiz: ${result}`
 });

@@ -1,11 +1,12 @@
 html{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: #28284b;
+    background-color: #221e2c;
+    font-size: 24px;    
 }
 #menu{
     width: 100%;
     height: 50px;
-    background-color: #1b1b32e7;
+    background-color: #15152752;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,11 +22,12 @@ html{
 }
 #quizDetails{
     font-size: 1.2rem;
-    background-color: #1b1b32e7;
+    background-color: #17171ef7;
     margin-top: 40px;
     padding-top: 5px;
     border-radius: 10px;
     padding: 10px;
+    padding-left: 30px;
     height: auto;
     margin: 100px;
     color: #f0f0f0f0
@@ -40,15 +42,23 @@ html{
     padding: 5px;
     display: inline-block;
 }
-#genQuiz{
+#generate{
     margin: 20px;
     border-radius: 5px;
-    height: 50px;
+    height: 60px;
     width: 400px;
     font-size: 30px;
-    left: auto;
-    right: auto;
+    right: 0;
 }
-#genQuiz:hover{
+button:hover{
     background-color: lightgreen;
+}
+input:hover{
+    background-color: #8b8b8b;
+    color: #302f2f;
+}
+input{
+    background-color: black;
+    color: #f0f0f0;
+    border: 2px solid rgb(81, 76, 76);
 }
