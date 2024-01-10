@@ -1,17 +1,15 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const gen = document.getElementById("result");
-  const generate = document.getElementById("generate");});
+const gen = document.getElementById("result");
+const generate = document.getElementById("generate");
 import OpenAI from "openai";
-const openai = new OpenAI({
-  apiKey: "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"
-});
+config(process.env.OPENAI_API_KEY)
+const openai = new OpenAI(process.env.OPENAI_API_KEY);
 generate.addEventListener('click', async function () {
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
       {
         "role": "user",
-        "content": "Create 10 analytical questions for an 8th grade igcse student, studying probability"
+        "content": "Find 5 space facts about astrophysics for a space geek such as effects of laws of time and space."
       }
     ],
     temperature: 0.5,
