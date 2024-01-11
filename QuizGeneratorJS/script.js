@@ -1,10 +1,8 @@
-const gen = document.getElementById("result");
-const generate = document.getElementById("generate");
-import OpenAI from "../node_modules/openai";
-import { config } from "../node_modules/env"; 
+import OpenAI from "openai";
+import { config } from "dotenv"; 
 config(process.env.OPENAI_API_KEY)
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
-generate.addEventListener('click', async function () {
+async function quiz() {
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
@@ -23,4 +21,5 @@ generate.addEventListener('click', async function () {
   const result = response.choices[0].message.content;
   console.log(result);
   gen.textContent = `quiz: ${result}`
-});
+}
+export function quiz() {}
