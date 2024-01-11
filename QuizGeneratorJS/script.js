@@ -1,6 +1,7 @@
 const gen = document.getElementById("result");
 const generate = document.getElementById("generate");
-import OpenAI from "openai";
+import OpenAI from "../node_modules/openai";
+import { config } from "../node_modules/env"; 
 config(process.env.OPENAI_API_KEY)
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 generate.addEventListener('click', async function () {
@@ -21,8 +22,5 @@ generate.addEventListener('click', async function () {
   gen.textContent = "generating...";
   const result = response.choices[0].message.content;
   console.log(result);
-  var delayInMilliseconds = 10000; //5 seconds
-  setTimeout(function() {
-  }, delayInMilliseconds);
   gen.textContent = `quiz: ${result}`
 });
