@@ -1,9 +1,10 @@
-import OpenAI from "openai";
-import { config } from "dotenv"; 
+import OpenAI from "../QuizGeneratorJS/node_modules/openai/index.mjs";
+import { config } from "../QuizGeneratorJS/node_modules/dotenv/lib/main.js"; 
+const response = document.getElementById("response")
 config(process.env.OPENAI_API_KEY)
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
 async function quiz() {
-  const response = await openai.chat.completions.create({
+  const request = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
       {
@@ -17,9 +18,11 @@ async function quiz() {
     frequency_penalty: 0,
     presence_penalty: 0,
   });
-  gen.textContent = "generating...";
-  const result = response.choices[0].message.content;
+  const result = request.choices[0].message.content;
   console.log(result);
-  gen.textContent = `quiz: ${result}`
+  response.textContent = result;
+  var delayInMilliseconds = 5000; //5 seconds
+  setTimeout(function() {
+  }, delayInMilliseconds);
 }
-export function quiz() {}
+quiz();

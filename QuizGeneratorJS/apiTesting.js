@@ -1,4 +1,4 @@
-import OpenAI from "openai";
+import OpenAI from "../QuizGeneratorJS/node_modules/openai/index.mjs";
 import { config } from "dotenv"; 
 config(process.env.OPENAI_API_KEY)
 const openai = new OpenAI(process.env.OPENAI_API_KEY);
