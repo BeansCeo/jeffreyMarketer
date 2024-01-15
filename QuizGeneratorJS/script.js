@@ -1,5 +1,5 @@
-import OpenAI from "../QuizGeneratorJS/node_modules/openai/index.mjs";
-import { config } from "../QuizGeneratorJS/node_modules/dotenv/lib/main.js"; 
+import OpenAI from "../node_modules/openai";
+import { config } from "../node_modules/dotenv/lib/main.js"; 
 const response = document.getElementById("response")
 config(process.env.OPENAI_API_KEY)
 const openai = new OpenAI(process.env.OPENAI_API_KEY);

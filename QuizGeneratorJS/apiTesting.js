@@ -19,8 +19,5 @@ async function quiz() {
   });
   const result = response.choices[0].message.content;
   console.log(result);
-  var delayInMilliseconds = 5000; //5 seconds
-  setTimeout(function() {
-  }, delayInMilliseconds);
 }
 quiz();
