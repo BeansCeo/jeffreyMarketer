@@ -1,4 +1,6 @@
-const Key = "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"
+const rawConfig = fs.readFileSync('config.json');
+const config = JSON.parse(rawConfig);
+const apiKey = config.apiKey;
 const company = document.getElementById("name");
 const service = document.getElementById("services");
 const goal = document.getElementById("goal");
