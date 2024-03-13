@@ -1,6 +1,4 @@
-const rawConfig = fs.readFileSync('config.json');
-const config = JSON.parse(rawConfig);
-const apiKey = config.apiKey;
+const apiKey = "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"
 const company = document.getElementById("name");
 const service = document.getElementById("services");
 const goal = document.getElementById("goal");
@@ -16,7 +14,7 @@ Generate.addEventListener("click", function(){
   plan.textContent= prompt
   const client = axios.create({
     headers:{
-      Authorization: "Bearer " + Key,
+      Authorization: "Bearer " + apiKey,
     },
   })
   const request = {
