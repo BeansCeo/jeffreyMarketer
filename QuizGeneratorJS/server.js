@@ -12,7 +12,7 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.listen(port)
-app.get('/quiz', function(req, res){
+app.get('/quiz.html', function(req, res){
     res.render('quiz.ejs', {
         apiKey: apiKey
     })

@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI quiz generator</title>
-    <link rel="stylesheet" href="/styles.css"> 
+    <link rel="stylesheet" href="styles.css"> 
     <script src="https://unpkg.com/axios@1.6.7"></script>
     <script>
         var apiKey = '<%= apiKey %>';
     </script>
 </head>
-<header id="menu">
+<header class="menu">
     <h1 id="title">AI quiz generator!</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="quiz.html" class="current">Generator</a></li> 
+        <li><a href="about.html">About</a></li> 
+        <li><a href="sub.html">Pricing</a></li>
+    </ul>
     </header>
     <br/>
 <body>
-    <div id="quizDetails">
+    <div class="desc">
         <p>Simply enter a topic, the board of education, class and Kachow! There's a quiz for everything.</p>
         <p>The capabilities of AI are amazing and it is the greatest study partner that you wil ever have.</p>
         <label for="topic">Topic: <input class="questions" id="topic" placeholder="Chemical Bonds" required></label><br>
