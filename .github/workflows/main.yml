@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Access Secret
         env:
-          MY_SECRET: ${{ secrets.APIKEY }}
+          MY_SECRET: ${{ secrets.MESSAGE }}
         run: |
-          echo "My secret value is $MY_SECRET"
+          echo "$MY_SECRET"
