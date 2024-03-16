@@ -12,8 +12,3 @@ app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
 app.listen(port)
-app.get('/marketer', function(req, res){
-    res.render('marketer.ejs', {
-        apiKey: apiKey
-    })
-})
