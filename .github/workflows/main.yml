@@ -1,0 +1,16 @@
+name: Access Secret Variable
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  access-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Access Secret
+        env:
+          MY_SECRET: ${{ secrets.APIKEY }}
+        run: |
+          echo "My secret value is $MY_SECRET"
