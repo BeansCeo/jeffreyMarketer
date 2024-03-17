@@ -1,4 +1,4 @@
-const config = require(dotenv).config()
+const config = require('dotenv').config()
 const company = document.getElementById("name");
 const service = document.getElementById("services");
 const goal = document.getElementById("goal");
