@@ -5,7 +5,7 @@ const audience = document.getElementById("audience");
 const Generate = document.getElementById("setSail");
 const deadline = document.getElementById("deadline");
 const plan = document.getElementById("plan");
-const apiKey = process.env.KEY;
+const apiKey = KEY;
 Generate.addEventListener("click", function(){
   let prompt = `Act as the greatest marketing planner ever using the analogy of assembling a boat. Help me create an oddyssey worthy SOP for my company; ${company.value} and our product, ${service.value}. We will market on social media such as instagram and youtube, you should list some more effective ways too. Tailor the plan to target my audience${audience.value} and draw traffic to my business. The goal is to reach ${goal.value} in sales by ${deadline.value}. Analyze current processes and potential bottlenecks.
   Draft multiple SOPs tailored to achieve goals efficiently, then test each SOP against a structured template. Evaluate strengths and weaknesses of each SOP. Synthesize best practices into a final, optimized SOP. Only reply with this final SOP. Finish in 1000 tokens.`
