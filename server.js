@@ -10,5 +10,9 @@ const port = 3000
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
-
 app.listen(port)
+app.get('/marketer.html', function(req, res){
+    res.render('marketer.ejs', {
+        apiKey: apiKey
+    })
+})
