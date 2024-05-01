@@ -1,13 +1,14 @@
-const company = document.getElementById("name");
-const service = document.getElementById("services");
-const goal = document.getElementById("goal");
-const audience = document.getElementById("audience");
-const Generate = document.getElementById("setSail");
-const deadline = document.getElementById("deadline");
-const plan = document.getElementById("plan");
-Generate.addEventListener("click", function(){
-  let prompt = `Act as the greatest marketing planner ever using the analogy of assembling a boat. Help me create an oddyssey worthy SOP for my company; ${company.value} and our product, ${service.value}. We will market on social media such as instagram and youtube, you should list some more effective ways too. Tailor the plan to target my audience${audience.value} and draw traffic to my business. The goal is to reach ${goal.value} in sales by ${deadline.value}. Analyze current processes and potential bottlenecks.
-  Draft multiple SOPs tailored to achieve goals efficiently, then test each SOP against a structured template. Evaluate strengths and weaknesses of each SOP. Synthesize best practices into a final, optimized SOP. Only reply with this final SOP. Finish in 1000 tokens.`
+const details = {
+  company:  document.getElementById("age"),
+  Generate:  document.getElementById("fitness level"),
+  service: document.getElementById("weight"),
+  goal:  document.getElementById("goal"),
+  deadline:  document.getElementById("deadline"),
+  plan: document.getElementById("plan"),
+}
+const {age, cap, weight, goal, deadline} = details;
+details.Generate.addEventListener("click", function(){
+  let prompt = `Act as a fitness trainer. Craft a workout tailored for a person of ${age}, starting their journey with you, from ${cap} fitness level at ${weight} weight in ${units}. They wish to ${goal} by ${deadline}`
   plan.textContent = prompt
   plan.textContent = "Generating"
   const client = axios.create({

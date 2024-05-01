@@ -10,5 +10,10 @@ const port = 3000
 
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
+app.get('/workout-planner', function(req, res){
+    res.render('../views/workoutPlan.ejs', {
+        apiKey: apiKey,
+    })
+})
 
 app.listen(port)
